@@ -28,6 +28,7 @@ module.exports = {
   materialize: '@cubejs-backend/materialize-driver',
   vertica: '@cubejs-backend/vertica-driver',
   pinot: '@cubejs-backend/pinot-driver',
+  sigma: '@cubejs-backend/sigma-driver',
   // List for JDBC drivers
   'databricks-jdbc': '@cubejs-backend/databricks-jdbc-driver',
 };

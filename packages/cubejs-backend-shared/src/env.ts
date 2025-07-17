@@ -2135,6 +2135,23 @@ const variables: Record<string, (...args: any) => any> = {
   fastReload: () => get('CUBEJS_FAST_RELOAD_ENABLED')
     .default('false')
     .asBoolStrict(),
+
+    /** ****************************************************************
+   * Sigma Driver                                                    *
+   ***************************************************************** */
+
+  /**
+   * Sigma API Key.
+   */
+  sigmaApiKey: ({
+    dataSource
+  }: {
+    dataSource: string,
+  }) => (
+    process.env[
+      keyByDataSource('CUBEJS_DB_SIGMA_API_KEY', dataSource)
+    ]
+  ),
 };
 
 type Vars = typeof variables;
