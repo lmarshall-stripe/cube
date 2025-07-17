@@ -32,7 +32,7 @@ export class SigmaDriver extends BaseDriver implements DriverInterface {
 
     this.config = { ...config,
       apiKey: this.apiKey,
-      pollTimeout: config.pollTimeout || 2000,
+      pollTimeout: 500,
       queryTimeout: (
         config.queryTimeout ||
         getEnv('dbQueryTimeout', { dataSource })
@@ -41,7 +41,7 @@ export class SigmaDriver extends BaseDriver implements DriverInterface {
   }
 
   public static getDefaultConcurrency() {
-    return 1;
+    return 5;
   }
 
   public static dialectClass() {
